@@ -8,7 +8,8 @@ interface ContextState {
 
 type AuthAction =
   | { type: "SIDE_BAR"; payload: boolean }
-  | { type: "SET_SUMMARY"; payload: string };
+  | { type: "SET_SUMMARY"; payload: string }
+  ;
 
 const INITIAL_STATE: ContextState = {
   sideBar: false,

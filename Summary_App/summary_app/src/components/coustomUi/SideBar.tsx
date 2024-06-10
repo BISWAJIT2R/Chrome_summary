@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiOutlineWechat } from "react-icons/ai";
+import { useHelper } from "@/context/ContextHelper";
 const fakeData = [
   {
     id: 1,
@@ -64,6 +65,9 @@ const fakeData = [
 ];
 
 const Sidebar = () => {
+  const {setData, summary} = useHelper();
+  console.log(summary);
+  
   return (
     <div className="sidebar absolute top-20 h-full max-h-[89%] w-[50%] bg-black overflow-x-hidden overflow-y-scroll px-2">
       <h2 className="h3-bold capitalize">summary Sidebar</h2>
@@ -76,8 +80,8 @@ const Sidebar = () => {
         </p>
       </div>
       <ul className="w-full relative mt-4 flex-start flex-col gap-2">
-        {fakeData.map(({ id, title }) => (
-          <li key={id} className="text-hover  small-semibold">
+        {fakeData.map(({ id, title, snippet }) => (
+          <li key={id} className="text-hover h3-regular" onClick={() => setData(snippet)}>
             <p>{title}</p>
           </li>
         ))}

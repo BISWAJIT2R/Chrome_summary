@@ -36,7 +36,7 @@ const FetchApi = (searchUrl:string) => {
         }
 
         if (searchUrl) {
-            callApi();
+            // callApi();
         }
 
         return () => {

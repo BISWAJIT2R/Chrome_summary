@@ -1,5 +1,5 @@
 import { QueryClient, useMutation } from "@tanstack/react-query";
-import { createNewUser, userLogin } from "../_backend/Supabase/api/AuthApi";
+import { GetUser, createNewUser, userLogin } from "../_backend/Supabase/api/AuthApi";
 import { IamUser, createdUser } from "@/types/Type";
 // import FetchApi from "../Engine/RapidApi";
 
@@ -25,3 +25,8 @@ export const LoggedUser = () => {
     })
 }
 
+export const GetUserFrontend = () => {
+    return useMutation({
+        mutationFn: () => GetUser()
+    })
+}
